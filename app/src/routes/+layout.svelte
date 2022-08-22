@@ -30,7 +30,7 @@
 		</span>
 		<!-- Desktop Links -->
 		<span class="desktop-links">
-			<a href="/portal">Login/Signup</a>
+			<a href="/portal">Account</a>
 		</span>
 	</nav>
 	<!-- this will return a TS error because this custom attribute is not on the official props list. Ignore it. -->

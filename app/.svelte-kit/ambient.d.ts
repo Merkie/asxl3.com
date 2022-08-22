@@ -34,11 +34,9 @@ declare module '$env/static/private' {
 	export const npm_package_private: string;
 	export const npm_config_registry: string;
 	export const ZSH: string;
-	export const npm_package_readmeFilename: string;
+	export const npm_package_dependencies__types_dotenv: string;
 	export const NVM_DIR: string;
 	export const USER: string;
-	export const npm_package_description: string;
-	export const npm_package_license: string;
 	export const npm_package_scripts_check_watch: string;
 	export const COMMAND_MODE: string;
 	export const CONDA_EXE: string;
@@ -81,6 +79,7 @@ declare module '$env/static/private' {
 	export const npm_package_type: string;
 	export const VSCODE_GIT_ASKPASS_MAIN: string;
 	export const npm_package_scripts_test: string;
+	export const npm_package_dependencies_dotenv: string;
 	export const npm_config_save_prefix: string;
 	export const npm_config_strict_ssl: string;
 	export const npm_config_version_git_message: string;
@@ -108,4 +107,6 @@ declare module '$env/static/private' {
 	export const COLORTERM: string;
 	export const npm_node_execpath: string;
 	export const npm_config_version_tag_prefix: string;
+	export const SECRET: string;
+	export const DATABASE_URL: string;
 }

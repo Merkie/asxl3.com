@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
   import { onMount } from "svelte";
 
-  let editor;
+  let editor: any;
 	
 	export let toolbarOptions = [
 		[{ header: 1 }, { header: 2 }, "blockquote", "link", "image", "video"],

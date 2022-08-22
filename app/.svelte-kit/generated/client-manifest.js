@@ -12,5 +12,5 @@ export const nodes = [
 export const dictionary = {
 	"": [[1], [0], 3],
 	"editor": [[1], [0], 4],
-	"portal": [[1], [2], 5]
+	"portal": [[1], [2], 5, 1]
 };

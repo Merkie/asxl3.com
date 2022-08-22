@@ -1,5 +1,43 @@
-<script>
+<script lang="ts">
+  export let data;
+
+  console.log(data);
+
+  let email: string;
+  let password: string;
+  let confirmPassword: string;
   let portalMode = "login";
+
+  let error = "";
+
+  const portal = async () => {
+    error = "";
+
+    // If the passwords dont match on signup
+    if (portalMode === "signup") {
+      if (password !== confirmPassword) {
+        error = "Passwords do not match";
+        return;
+      }
+    }
+    
+    // Fetch response from server
+    const response = await fetch('/api/'+portalMode, {
+      method: 'POST',
+      body: JSON.stringify({
+        email,
+        password
+      })
+    })
+    
+    // Evaluate response
+    if (response.ok) return window.location.href = '/';
+    const body = await response.json();
+    error = body.error;
+  }
+
+
+  $: console.log(email);
 </script>
 
 <div class="art">
@@ -17,17 +55,18 @@
 </div>
 <div class="form-container">
   <h1 style="padding: 1.5rem; cursor: pointer;"><a href="/" style="text-decoration: none; color: inherit;">ASXL3</a></h1>
-  <form>
+  <div class="form">
     <h1 style="text-align: center">Account portal</h1>
     <div class="login-options">
       <p on:click={() => portalMode = "login"} class={portalMode == "login" ? "selected" : ""} >Login</p>
       <p on:click={() => portalMode = "signup"} class={portalMode == "signup" ? "selected" : ""}>Signup</p>
     </div>
-    <input placeholder="Email" type="text">
-    <input placeholder="Password" type="password">
-    <input style={`display: ${portalMode == "signup" ? "block" : "none"}`} placeholder="Confirm Password" type="password">
-    <button>Login</button>
-  </form>
+    <input bind:value={email} placeholder="Email" type="text">
+    <input bind:value={password} placeholder="Password" type="password">
+    <input bind:value={confirmPassword} style={`display: ${portalMode == "signup" ? "block" : "none"}`} placeholder="Confirm Password" type="password">
+    <p class="error">{error}</p>
+    <button on:click={portal}>Login</button>
+  </div>
 </div>
 
 
@@ -83,7 +122,7 @@
     left: 0;
   }
 
-  form {
+  .form {
     font-family: 'Titillium Web', sans-serif;
     position: absolute;
     top: 50%;
@@ -132,6 +171,12 @@
   button:hover {
     background-color: var(--LIGHT_GRAY1);
     color: var(--VERMILION3);
+  }
+
+  .error {
+    margin: 5px;
+    margin-left: 0;
+    color: var(--VERMILION4);
   }
 
   @media (max-width: 700px) {
