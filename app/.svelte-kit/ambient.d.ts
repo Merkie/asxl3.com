@@ -23,6 +23,7 @@ declare module '$env/static/private' {
 	export const npm_package_scripts_lint: string;
 	export const npm_config_init_license: string;
 	export const TERM_PROGRAM_VERSION: string;
+	export const npm_package_dependencies_cuid: string;
 	export const npm_package_devDependencies_eslint_plugin_svelte3: string;
 	export const npm_package_scripts_dev: string;
 	export const ZDOTDIR: string;
@@ -56,6 +57,7 @@ declare module '$env/static/private' {
 	export const _: string;
 	export const npm_config_engine_strict: string;
 	export const __CFBundleIdentifier: string;
+	export const npm_package_dependencies_image_file_resize: string;
 	export const PWD: string;
 	export const npm_package_scripts_preview: string;
 	export const npm_lifecycle_event: string;

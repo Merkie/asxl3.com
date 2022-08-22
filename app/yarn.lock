@@ -576,6 +576,11 @@
     "shebang-command" "^2.0.0"
     "which" "^2.0.1"
 
+"cuid@^2.1.8":
+  "integrity" "sha512-xiEMER6E7TlTPnDxrM4eRiC6TRgjNX9xzEZ5U/Se2YJKr7Mq4pJn/2XEHjl3STcSh96GmkHPcBXLES8M29wyyg=="
+  "resolved" "https://registry.npmjs.org/cuid/-/cuid-2.1.8.tgz"
+  "version" "2.1.8"
+
 "data-uri-to-buffer@^4.0.0":
   "integrity" "sha512-Vr3mLBA8qWmcuschSLAOogKgQ/Jwxulv3RNE4FXnYWRGujzrRWQI4m12fQqRkwX06C0KanhLr4hK+GydchZsaA=="
   "resolved" "https://registry.npmjs.org/data-uri-to-buffer/-/data-uri-to-buffer-4.0.0.tgz"
@@ -1131,6 +1136,11 @@
   "integrity" "sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ=="
   "resolved" "https://registry.npmjs.org/ignore/-/ignore-5.2.0.tgz"
   "version" "5.2.0"
+
+"image-file-resize@^1.0.5":
+  "integrity" "sha512-YCJdPe2sEXQZzUWeC+NiQuMAnw9sd3VDQOlDfSrbOUR/jDk3K25qww2mXPWTVj4+WY7vQVr/XRpyP0QRyYiVag=="
+  "resolved" "https://registry.npmjs.org/image-file-resize/-/image-file-resize-1.0.5.tgz"
+  "version" "1.0.5"
 
 "import-fresh@^3.0.0", "import-fresh@^3.2.1":
   "integrity" "sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw=="
