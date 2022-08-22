@@ -31,8 +31,7 @@
 		<!-- Desktop Links -->
 		<span class="desktop-links">
 			<a href="/">Home</a>
-			<a href="/about">About</a>
-			<a href="/settings">Settings</a>
+			<a href="/portal">Login/Signup</a>
 		</span>
 	</nav>
 	<!-- this will return a TS error because this custom attribute is not on the official props list. Ignore it. -->
