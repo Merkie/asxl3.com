@@ -30,7 +30,6 @@ export const POST: RequestHandler = async ({request}) => {
     if(error.message === "AUTH_DUPLICATE_IDENTIFIER_TOKEN" || error.message === "AUTH_DUPLICATE_USER_DATA") {
       return new Response(JSON.stringify({error: "Email already exists"}), {status: 400});
     } else {
-      console.log(error);
       return new Response(JSON.stringify({error: "Unknown error"}), {status: 500});
     }
   }

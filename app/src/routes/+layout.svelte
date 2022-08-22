@@ -1,7 +1,10 @@
-<script>
+<script lang="ts">
 	import { Colors } from '$lib/colors';
 	import { Icon, Search, Menu } from 'svelte-hero-icons';
 	import { clickOutside } from '$lib/clickOutside';
+	import type { LayoutServerData } from '.svelte-kit/types/src/routes/$types';
+
+	export let data: LayoutServerData;
 
 	$: cssVarStyles = Object.entries(Colors)
 		.map(([key, value]) => `--${key}:${value}`)
@@ -30,7 +33,8 @@
 		</span>
 		<!-- Desktop Links -->
 		<span class="desktop-links">
-			<a href="/portal">Account</a>
+			<a style={`display: ${!data.success ? "block" : "none"}`} href="/portal">Login/Signup</a>
+			<a style={`display: ${data.success ? "block" : "none"}`} href="/account">My Account</a>
 		</span>
 	</nav>
 	<!-- this will return a TS error because this custom attribute is not on the official props list. Ignore it. -->

@@ -1,8 +1,6 @@
 <script lang="ts">
   export let data;
 
-  console.log(data);
-
   let email: string;
   let password: string;
   let confirmPassword: string;
@@ -35,9 +33,6 @@
     const body = await response.json();
     error = body.error;
   }
-
-
-  $: console.log(email);
 </script>
 
 <div class="art">
