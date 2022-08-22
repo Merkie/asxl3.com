@@ -1,7 +1,7 @@
 <script>
-	import { Colors } from '@blueprintjs/core';
+	import { Colors } from '$lib/colors';
 	import { Icon, Search, Menu } from 'svelte-hero-icons';
-	import { clickOutside } from '../lib/clickOutside';
+	import { clickOutside } from '$lib/clickOutside';
 
 	$: cssVarStyles = Object.entries(Colors)
 		.map(([key, value]) => `--${key}:${value}`)
@@ -30,7 +30,6 @@
 		</span>
 		<!-- Desktop Links -->
 		<span class="desktop-links">
-			<a href="/">Home</a>
 			<a href="/portal">Login/Signup</a>
 		</span>
 	</nav>
@@ -54,13 +53,12 @@
 	/* Remove margin from the body globally and apply the font family */
 	:global(body) {
 		margin: 0;
-		font-family: 'Domine', serif;
+		font-family: 'Titillium Web', sans-serif;
 	}
 
 	/* Navigation work */
 
 	nav {
-		font-family: 'Titillium Web', sans-serif;
 		display: flex;
 		align-items: center;
 		padding: 0.5rem;
