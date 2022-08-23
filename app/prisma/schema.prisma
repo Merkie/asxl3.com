@@ -39,7 +39,8 @@ model User {
   hashed_password  String?
   account_status   String         @default("user")
   email            String
-  name             String         @default("")
+  name             String         
+  profileimage     String         @default("default-profile.jpg")
   RefreshToken     RefreshToken[]
   Article          Article[]
   Comment          Comment[]

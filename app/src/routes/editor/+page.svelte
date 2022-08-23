@@ -25,7 +25,7 @@
 </script>
 
 <div class="editor-header">
-  <h3>Editing article: <span contenteditable="true" >How to know which feed is right for your child.</span></h3>
+  <h3>Editing article: <span contenteditable="true" >Click me to edit the title!</span></h3>
   <div style="flex: 1"/>
   <button class="secondary">Preview</button><button class="secondary">Draft</button><button>Publish</button>
 </div>

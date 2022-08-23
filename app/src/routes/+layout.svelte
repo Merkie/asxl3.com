@@ -65,9 +65,9 @@
 	nav {
 		display: flex;
 		align-items: center;
-		padding: 0.5rem;
+		padding: 0.1rem;
 		background: var(--VERMILION3);
-		border-bottom: var(--VERMILION4) 2px solid;
+		font-size: 16px;
 	}
 
 	nav a {
@@ -77,7 +77,7 @@
 	}
 
 	.brand {
-		font-size: 1.75rem;
+		font-size: 1.5rem;
 		font-weight: bold;
 		color: white;
 	}
@@ -102,7 +102,6 @@
 
 	input {
 		height: 30px;
-		font-size: 1.2rem;
 		color: white;
 		background: transparent;
 		border: none;
@@ -114,7 +113,6 @@
 	}
 
 	/* Main content */
-
 	main {
 		width: min(1200px, 95%);
 		margin: 0 auto;

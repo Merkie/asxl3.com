@@ -3,7 +3,7 @@ import { auth } from "$lib/lucia";
 import type { Error } from "lucia-sveltekit";
 
 export const POST: RequestHandler = async ({request}) => {
-  const {email, password} = await request.json();
+  const { email, password, name } = await request.json();
   
   // If no username or password
   if(!email || !password) {
@@ -15,7 +15,8 @@ export const POST: RequestHandler = async ({request}) => {
     const createUser = await auth.createUser("username", email, {
       password,
       user_data: {
-        email
+        email,
+        name
       }
     })
     return new Response("success", {
