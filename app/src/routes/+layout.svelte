@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Colors } from '$lib/colors';
-	import { Icon, Search, Menu } from 'svelte-hero-icons';
+	import { Icon, Search, Menu, UserCircle } from 'svelte-hero-icons';
 	import { clickOutside } from '$lib/clickOutside';
 	import type { LayoutServerData } from '.svelte-kit/types/src/routes/$types';
 
@@ -34,7 +34,7 @@
 		<!-- Desktop Links -->
 		<span class="desktop-links">
 			<a style={`display: ${!data.success ? "block" : "none"}`} href="/portal">Login/Signup</a>
-			<a style={`display: ${data.success ? "block" : "none"}`} href="/account">My Account</a>
+			<a style={`display: ${data.success ? "block" : "none"}`} href="/account"><Icon size="20px" src={UserCircle} /></a>
 		</span>
 	</nav>
 	<!-- this will return a TS error because this custom attribute is not on the official props list. Ignore it. -->
@@ -58,6 +58,7 @@
 	:global(body) {
 		margin: 0;
 		font-family: 'Titillium Web', sans-serif;
+		background-color: #EDEFF2; /* Maybe */
 	}
 
 	/* Navigation work */
