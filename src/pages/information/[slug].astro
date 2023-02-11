@@ -3,13 +3,13 @@ import InformationArticlePicker from "../../components/InformationArticlePicker.
 import Layout from "../layout.astro";
 import Articles from "../../articles/index";
 
-// export function getStaticPaths() {
-//   return Articles.map((article) => ({
-//     params: {
-//       slug: article.link.replace("/", ""),
-//     },
-//   }));
-// }
+export function getStaticPaths() {
+  return Articles.map((article) => ({
+    params: {
+      slug: article.link.replace("/", ""),
+    },
+  }));
+}
 
 const { slug } = Astro.params;
 const article = Articles.find(
