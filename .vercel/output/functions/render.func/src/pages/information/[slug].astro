@@ -1,0 +1,91 @@
+---
+import InformationArticlePicker from "../../components/InformationArticlePicker.svelte";
+import Layout from "../layout.astro";
+import Articles from "../../articles/index";
+
+// export function getStaticPaths() {
+//   return Articles.map((article) => ({
+//     params: {
+//       slug: article.link.replace("/", ""),
+//     },
+//   }));
+// }
+
+const { slug } = Astro.params;
+const article = Articles.find(
+  (article) => article.link.replace("/", "") === slug
+)! as {
+  title: string;
+  link: string;
+  author: string;
+  reviewedBy: string;
+  authorshipDate: string;
+  reviewedDate: string;
+  content: { heading?: string; content: string }[];
+};
+---
+
+<Layout title={"Information"}>
+  <section class="p-2 bg-navy-blue-500 text-white text-center">
+    <p>
+      Information in these articles may be false as they are purely placeholder
+      for now.
+    </p>
+  </section>
+  <div
+    class="flex w-[80%] max-w-[1400px] flex-1 bg mx-auto relative gap-8 pt-16 md:pt-0"
+  >
+    <InformationArticlePicker client:load />
+    <div class="pb-[250px] flex-1">
+      <div class="flex-1 pt-8 flex flex-col">
+        <h1 class="text-4xl font-semibold mb-4">{article.title}</h1>
+        <small>Written by {article.author} on {article.authorshipDate}.</small>
+        <small
+          ><i class="bi bi-check-circle-fill text-cerulean-500"></i> Medically Reviewed
+          by <a class="font-medium text-cerulean-500 cursor-pointer" href="#"
+            >{article.reviewedBy}</a
+          > on {article.reviewedDate}.</small
+        >
+
+        <div class="flex flex-col gap-2">
+          <h1 class="text-xl font-semibold pt-8">In This Article:</h1>
+          {
+            article.content.map((articlePiece) => {
+              return articlePiece.heading ? (
+                <a
+                  class="text-cerulean-500 cursor-pointer pl-4"
+                  href={`#${articlePiece.heading.replaceAll(" ", "-")}`}
+                >
+                  {articlePiece.heading}
+                </a>
+              ) : null;
+            })
+          }
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        {
+          article.content.map((articlePiece, i) => {
+            const piece = (
+              <div class="flex-1 pt-6 flex flex-col mb-4">
+                {articlePiece.heading && (
+                  <h2
+                    class="text-2xl font-semibold mb-4"
+                    id={articlePiece.heading.replaceAll(" ", "-")}
+                  >
+                    {articlePiece.heading}
+                  </h2>
+                )}
+                {articlePiece.content.split("\n").map((paragraph) => {
+                  return <p class="text-lg pb-2">{paragraph}</p>;
+                })}
+              </div>
+            );
+            return piece;
+          })
+        }
+      </div>
+    </div>
+  </div>
+</Layout>

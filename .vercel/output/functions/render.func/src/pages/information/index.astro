@@ -1,0 +1,6 @@
+---
+import InformationArticlePicker from "../../components/InformationArticlePicker.svelte";
+import Layout from "../layout.astro";
+import articles from "../../articles/index";
+return Astro.redirect("/information" + articles[0].link);
+---

@@ -1,0 +1,31 @@
+---
+import Layout from "../layout.astro";
+---
+
+<Layout title={"Families"}>
+  <div
+    class="p-16 flex bg-gradient-to-r from-navy-blue-500 text-white text-center to-cerulean-500 relative overflow-hidden"
+  >
+    <div
+      style={`background-image: url("https://www.transparenttextures.com/patterns/snow.png");`}
+      class="absolute top-0 left-0 w-full h-full hero"
+    >
+    </div>
+
+    <p class="text-5xl font-semibold">Meet the Families</p>
+    <div
+      class="w-[500px] h-[500px] rounded-full bg-cerulean-300 opacity-20 absolute top-1/2 -translate-y-1/2 -right-[100px]"
+    >
+    </div>
+    <div
+      class="w-[500px] h-[500px] rounded-full bg-cerulean-100 opacity-20 absolute top-[200px] -translate-y-1/2 -right-[50px]"
+    >
+    </div>
+    <div
+      class="w-[500px] h-[500px] rounded-full bg-cerulean-300 absolute top-1/2 -translate-y-1/2 -right-[130px] overflow-hidden"
+    >
+      <img src="/family-pic.png" class="w-full h-full" alt="" />
+    </div>
+  </div>
+  <div class="flex-1"></div>
+</Layout>
