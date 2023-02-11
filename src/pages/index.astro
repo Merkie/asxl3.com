@@ -1,15 +1,55 @@
 ---
+import Layout from "./layout.astro";
+import Hero from "../components/Hero.svelte";
+import HomeInfoCard from "../components/HomeInfoCard.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title={"Home"}>
+  <Hero client:load />
+  <div class="w-full my-[50px]">
+    <div class="flex flex-col gap-2">
+      <HomeInfoCard
+        title={"What is ASXL3 (Banebridge-Ropers Syndrome)?"}
+        paragraph={`ASXL3 is a rare genetic disorder that can have a significant impact on
+        a person's health and daily life. If your family is affected by this
+        condition, you may have many questions and concerns. It's important to
+        know that you're not alone and there is support available. ASXL3
+        affects many different parts of the body, including the bones, brain,
+        heart, and hearing. Some of the most common symptoms include delayed
+        development, intellectual disability, and difficulty hearing. People
+        with ASXL3 may also have physical characteristics such as abnormally
+        shaped fingers and toes. It's important to know that every person with
+        ASXL3 is unique and will experience the condition differently. Some
+        may have mild symptoms, while others may experience more severe
+        effects. With the right support and care, however, people with ASXL3
+        can lead fulfilling lives and reach their full potential.`}
+      />
+      <HomeInfoCard
+        alt={true}
+        title={"What causes ASXL3?"}
+        paragraph={`ASXL3 is caused by a genetic mutation in the ASXL3 gene. This gene
+          provides instructions for making a protein that plays a role in regulating
+          the activity of other genes. When the ASXL3 gene is mutated, it can lead
+          to the production of an abnormal protein that interferes with the normal
+          functioning of the body's cells. The exact way that this interference
+          leads to the symptoms of ASXL3 is not yet fully understood, but
+          researchers believe that it may disrupt the normal development of the
+          brain and other parts of the body. The genetic mutation that causes ASXL3
+          is inherited in an autosomal dominant pattern, which means that a person
+          has a 50% chance of inheriting the mutated gene from a parent who has the
+          condition.`}
+      />
+      <div class="mb-[600px]"></div>
+      <!-- <span class="w-[80%] max-w-[1400px] mx-auto">
+        <h1
+          class="text-3xl mb-4 font-bold border-4 border-razzmatazz-500 text-navy-blue-500 border-x-0 border-t-0 w-fit"
+        >
+          
+        </h1>
+        <p>
+          
+        </p>
+      </span> -->
+    </div>
+  </div>
+</Layout>

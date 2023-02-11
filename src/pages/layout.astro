@@ -1,0 +1,40 @@
+---
+import Header from "../components/Header.astro";
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <title>ASXL3 | {title}</title>
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <Header />
+    <slot />
+
+    <div
+      class="py-2 bg-gradient-to-r from-navy-blue-500 text-white text-center to-cerulean-500 relative overflow-hidden"
+    >
+      <div
+        style={`background-image: url("https://www.transparenttextures.com/patterns/snow.png");`}
+        class="absolute top-0 left-0 w-full h-full hero"
+      >
+      </div>
+
+      <p>Copyright 2023 - ASXL3.com</p>
+    </div>
+  </body>
+</html>
+
+<style>
+  .hero {
+    background-image: url("https://www.transparenttextures.com/patterns/snow.png");
+  }
+</style>
